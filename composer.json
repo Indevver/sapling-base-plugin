@@ -1,0 +1,10 @@
+{
+    "optimize-autoloader": true,
+    "autoload": {
+        "psr-4": {"Plugin\\": "src/"}
+    },
+    "require": {
+        "stoutlogic/acf-builder": "^1.8",
+        "timber/timber": "^1.12"
+    }
+}
