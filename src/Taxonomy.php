@@ -12,7 +12,7 @@ class Taxonomy
         $this->name = $name;
         $this->args = $args;
         $this->postType = $postType;
-        add_action( 'init',  [$this, 'register']);
+        add_action( 'init',  [$this, 'register'], 3);
         register_activation_hook( $file, [$this, 'flush']);
     }
 
