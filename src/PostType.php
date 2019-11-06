@@ -10,7 +10,7 @@ class PostType
     {
         $this->name = $name;
         $this->args = $args;
-        add_action( 'init',  [$this, 'register']);
+        add_action( 'init',  [$this, 'register'], 3);
         register_activation_hook( $file, [$this, 'flush']);
     }
 
