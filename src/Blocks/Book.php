@@ -1,16 +1,33 @@
 <?php
 namespace Plugin\Blocks;
 
+use Sapling\Plugin\Blocks\AbstractBlock;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class Book extends FieldsBuilder
+class Book extends AbstractBlock
 {
-    public function __construct()
+
+    public function getName(): string
     {
-        parent::__construct('plugin_book', ['label' => 'Book']);
-        $this->addTab('Content')
-            ->addText('title')->setDefaultValue('example title')
-            ->addPostObject('book' , ['post_type' => "book"])
+        return 'book';
+    }
+
+    public function getTitle(): string
+    {
+        return __('Book');
+    }
+
+    public function getDescription(): string
+    {
+        return __('Description');
+    }
+
+    public function getFields(): FieldsBuilder
+    {
+        $builder = new FieldsBuilder('book');
+        $builder
+            ->addText('title2')
         ;
+        return $builder;
     }
 }

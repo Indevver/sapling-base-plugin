@@ -52,16 +52,10 @@ $settings = new \Plugin\SettingsPage('book_settings', __('Book Settings'));
 $settings->addText('Publisher');
 
 // blocks
-add_filter('sapling_acf_builder_fields', function(array $fields) :array
-{
-    $advancedTab = new \Sapling\Plugin\ACF\Tabs\Advanced();
+add_filter('gutenblock_blocks', function (array $blocks) {
+    $blocks[] = new \Plugin\Blocks\Book();
 
-    $fields['plugin_book'] = new Plugin\Blocks\Book();
-    $advancedTab->addTab($fields['plugin_book']);
-
-    ksort($fields);
-
-    return $fields;
+    return $blocks;
 });
 
 // assets
