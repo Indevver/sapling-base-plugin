@@ -19,14 +19,16 @@ class Book extends AbstractBlock
 
     public function getDescription(): string
     {
-        return __('Description');
+        return __('Description of book');
     }
 
     public function getFields(): FieldsBuilder
     {
-        $builder = new FieldsBuilder('book');
+        // note the name cannot conflict with the fields for the post type
+        $builder = new FieldsBuilder('book_block');
         $builder
-            ->addText('title2')
+            ->addText('title')
+            ->addWysiwyg('content')
         ;
         return $builder;
     }
