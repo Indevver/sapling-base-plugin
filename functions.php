@@ -29,7 +29,8 @@ $postType = new \Plugin\PostType(__FILE__, 'book', [
     'public'    => true,
     'has_archive' => true,
     'hierarchical' => false,
-    'supports' => ['title', 'excerpt', 'author', 'thumbnail'],
+    'show_in_rest' => true,
+    'supports' => ['title', 'excerpt', 'editor', 'author', 'thumbnail'],
     'menu_position' => null,
     'menu_icon' => 'dashicons-book',
 ]);
